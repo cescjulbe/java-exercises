@@ -1,13 +1,12 @@
 package cesc.examples.javalanguage;
 
-import java.util.Scanner;
-
 public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.out.println(getSandwich("abcbreaz"));
-		reverseArray(args);
+
+		reverseArray("ABCDEFGHI");
+
 	}
 
 	public static boolean removeExtremes(String str) {
@@ -109,12 +108,16 @@ public class MainClass {
 	 * 
 	 * 
 	 */
-	public static void reverseArray(String[] args) {
-	    Scanner in = new Scanner(System.in);
-	    int n = in.nextInt();
-	    int arr[] = new int[n];
-	    for(int arr_i=n-1; arr_i >0; arr_i--){
-	        arr[arr_i] = in.nextInt();
+	public static void reverseArray(String str) {
+
+	    char[] arr1= str.toCharArray();
+	    char[] arr2 = new char[arr1.length];
+	    int instantCount=0;
+	    for(int arr_i=arr1.length-1; arr_i >=0; arr_i--){
+	        arr2[arr_i] = arr1[instantCount];
+	        instantCount++;
 	    }
+	    System.out.println(String.copyValueOf(arr1));
+	    System.out.println(String.copyValueOf(arr2));
 	}
 }
